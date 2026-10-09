@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#18070c">
+<title>To Umaima, My Emily ❤️</title>
+<style>
+:root{--bg:#100609;--wine:#3b0b19;--red:#7d1734;--gold:#e0b878;--paper:#fff4e4;--ink:#38231f}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#43101f 0%,#19080e 48%,#080507 100%);color:#fff4e8;font-family:Georgia,'Times New Roman',serif;display:flex;align-items:center;justify-content:center;padding:24px;overflow-x:hidden}
+.glow{position:fixed;width:280px;height:280px;border-radius:50%;background:#8b1838;filter:blur(100px);opacity:.18;pointer-events:none}
+.glow.one{top:-80px;left:-70px}.glow.two{right:-100px;bottom:-100px;background:#c18b46}
+.wrap{width:min(760px,100%);position:relative;z-index:1;text-align:center}
+.eyebrow{color:var(--gold);letter-spacing:.28em;text-transform:uppercase;font:11px Arial,sans-serif;margin-bottom:26px}
+h1{font-weight:400;font-size:clamp(32px,7vw,56px);margin:0 0 10px;color:#f5d9a4}
+.subtitle{color:#d7b9b5;font-style:italic;margin:0 0 34px}
+.envelope-area{height:290px;display:flex;align-items:center;justify-content:center;perspective:1000px}
+.envelope{position:relative;width:min(390px,88vw);height:230px;cursor:pointer;filter:drop-shadow(0 18px 24px #0008);transition:transform .3s}
+.envelope:hover{transform:translateY(-4px)}
+.env-back{position:absolute;inset:0;background:#6b172c;border:1px solid #d6a85d;border-radius:8px}
+.letter-peek{position:absolute;left:7%;width:86%;height:86%;bottom:5%;background:var(--paper);color:var(--ink);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:transform 1s ease;box-shadow:0 2px 8px #0003}
+.letter-peek span:first-child{font-size:26px;color:#7d1734}.letter-peek span:last-child{font-size:12px;letter-spacing:.18em;margin-top:8px}
+.flap{position:absolute;inset:0;background:#8d2340;clip-path:polygon(0 0,100% 0,50% 60%);transform-origin:top;transition:transform .85s ease;z-index:4;border-radius:8px 8px 0 0}
+.left-fold{position:absolute;inset:0;background:#541126;clip-path:polygon(0 0,52% 52%,0 100%);z-index:3}
+.right-fold{position:absolute;inset:0;background:#731a35;clip-path:polygon(100% 0,48% 52%,100% 100%);z-index:3}
+.bottom-fold{position:absolute;inset:0;background:#8a2540;clip-path:polygon(0 100%,50% 48%,100% 100%);z-index:3}
+.seal{position:absolute;z-index:5;left:50%;top:52%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:linear-gradient(145deg,#f0d29a,#b77d3b);color:#65142b;display:grid;place-items:center;font-size:24px;box-shadow:0 2px 10px #0005;transition:opacity .3s}
+.tap{font:12px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#e5c9bd;margin-top:6px;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{opacity:.55}}
+.envelope.open .flap{transform:rotateX(180deg);z-index:1}
+.envelope.open .letter-peek{transform:translateY(-112px);z-index:5}
+.envelope.open .seal{opacity:0}
+.open-hint{color:#d7b9b5;font-size:13px;margin-top:2px}
+.letter{display:none;text-align:left;background:var(--paper);color:var(--ink);padding:clamp(24px,5vw,54px);margin:22px auto 0;border:1px solid #d8b981;box-shadow:0 20px 70px #0008;max-width:700px;line-height:1.85;border-radius:3px;animation:appear .9s ease both}
+.letter.show{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.letter .topline{text-align:center;color:#8b3c43;text-transform:uppercase;letter-spacing:.2em;font:10px Arial,sans-serif}
+.letter h2{text-align:center;font-size:clamp(25px,5vw,38px);font-weight:400;color:#6b172c;margin:10px 0 0}
+.letter .date{text-align:center;color:#9b6b54;font-style:italic;margin:3px 0 28px}
+.letter p{margin:0 0 17px;font-size:16px}
+.letter .signoff{margin-top:26px}
+.letter .signature{font-size:27px;font-style:italic;color:#7d1734;margin-top:2px}
+.footer{font-size:11px;color:#bca2a3;letter-spacing:.1em;margin-top:30px}
+button{border:1px solid #d9b26f;background:linear-gradient(135deg,#8c1d3b,#4a0d20);color:#fff3df;border-radius:30px;padding:13px 24px;font:12px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;margin-top:20px}
+button:hover{filter:brightness(1.15)}
+@media(max-width:480px){body{padding:18px 14px}.envelope-area{height:255px}.envelope{height:195px}.letter p{font-size:15px}.letter{padding:24px 20px}}
+</style>
+</head>
+<body>
+<div class="glow one"></div><div class="glow two"></div>
+<main class="wrap">
+  <div class="eyebrow">A little something, made just for you</div>
+  <h1>To Umaima, My Emily</h1>
+  <p class="subtitle">A letter for your birthday · October 10</p>
+  <div class="envelope-area">
+    <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Open your birthday letter">
+      <div class="env-back"></div>
+      <div class="letter-peek"><span>♡</span><span>FOR UMAIMA</span></div>
+      <div class="left-fold"></div><div class="right-fold"></div><div class="bottom-fold"></div>
+      <div class="flap"></div><div class="seal">♡</div>
+    </div>
+  </div>
+  <div class="tap" id="tap">Tap the envelope to open</div>
+  <div class="open-hint">A little letter, with a lot of heart.</div>
+  <button id="openBtn">Open my letter ♡</button>
+
+  <article class="letter" id="letter">
+    <div class="topline">For your special day</div>
+    <h2>Dear Umaima,</h2>
+    <div class="date">October 10 · With love</div>
+
+    <p>I have been thinking about what to write to you on your birthday, and honestly, I wanted these words to be more than just another birthday letter. I wanted them to be something you could read slowly, something that would make you pause for a moment and understand what I have been trying to express from my heart.</p>
+    <p>First of all, happy birthday to you. ❤️</p>
+    <p>I hope you know that today is not just another date on the calendar for me. It is a reminder of the day someone with her own dreams, thoughts, emotions, and beautiful little imperfections came into this world. And somehow, along the way, you became someone whose happiness matters to me more than I can always explain.</p>
+    <p>I know we haven't understood each other perfectly every time. There have been moments when our words may not have carried the feelings we intended, when silence may have said the wrong things, and when misunderstandings made things harder than they needed to be. I won't pretend that everything has always been easy, because I believe that being honest matters more than making everything sound perfect.</p>
+    <p>But I also don't want to define us by the difficult moments.</p>
+    <p>There is more to a connection than one disagreement, one disappointing conversation, or one day when two people fail to understand each other. There are lessons in those moments, too. They remind us that listening matters, that assumptions can hurt, and that understanding someone sometimes requires more patience than simply explaining ourselves.</p>
+    <p>I am learning that caring about someone is not only about expressing feelings. It is also about how we communicate, how we respect each other's emotions, and how willing we are to understand a perspective different from our own. I know I am still learning, and I want to keep becoming a better person in the way I speak, listen, and treat the people who matter to me.</p>
+    <p>On your birthday, I don't want to put any pressure on your heart. I don't want this letter to become a list of things you must answer or feelings you must return. I simply wanted to give you something honest from me, something that belongs to this day and carries no expectation except that you receive it in the spirit in which it was written.</p>
+    <p>Umaima, I hope you never lose the parts of yourself that make you who you are. I hope you continue to build your own dreams, discover new things about yourself, and find the confidence to walk toward the future you want. I hope you have people around you who celebrate your achievements, listen when you need to talk, and remind you of your worth when life feels overwhelming.</p>
+    <p>And when you look back on this birthday someday, I hope you remember that someone took the time to write you a letter—not because a birthday required it, but because he genuinely wanted you to feel appreciated.</p>
+    <p>You are a real person, with your own feelings and your own way of seeing the world. You deserve to be understood as you are, not as someone else imagines you to be. I hope I can always remember that, especially in moments when understanding takes a little more effort.</p>
+    <p>If there is one thing I wish for us, it is that we learn to understand each other better, speak more openly, and treat each other's feelings with care. Not by pretending we will never disagree, but by remembering that respect should remain even when we see things differently.</p>
+    <p>And if the future gives us beautiful moments to share, I hope we meet them with gratitude. If it gives us difficult moments, I hope we face them with maturity. Whatever tomorrow brings, I want the good wishes I have for you today to be sincere.</p>
+    <p>I pray that Allah protects you, gives you peace of mind, blesses your efforts, opens doors to wonderful opportunities, and guides you toward everything that is good for you. May you find happiness that does not depend on a single person or a single moment, but grows from within you and from the beautiful life you continue to create.</p>
+    <p>Happy birthday, Umaima.</p>
+    <p>Thank you for being a meaningful part of my life and for giving me reasons to reflect, learn, and express feelings I might otherwise have kept to myself.</p>
+    <p>I hope this new chapter of your life brings you closer to your dreams, gives you more reasons to believe in yourself, and leaves you with memories you will always be glad to carry.</p>
+    <p class="signoff"><strong>With sincere affection, warm prayers, and all my best wishes,</strong></p>
+    <p class="signature">Abdullah</p>
+    <p style="text-align:center;color:#8b3c43;font-size:12px;margin-top:30px">For Umaima, My Emily — October 10 ♡</p>
+  </article>
+  <div class="footer">MADE WITH CARE · A BIRTHDAY LETTER FOR UMAIMA</div>
+</main>
+<script>
+const envelope=document.getElementById('envelope');
+const letter=document.getElementById('letter');
+const tap=document.getElementById('tap');
+const openBtn=document.getElementById('openBtn');
+function openLetter(){
+  envelope.classList.add('open');
+  tap.textContent='Your letter is opening…';
+  openBtn.style.display='none';
+  setTimeout(()=>{letter.classList.add('show');tap.textContent='A letter, just for you ♡';letter.scrollIntoView({behavior:'smooth',block:'start'});},650);
+}
+envelope.addEventListener('click',openLetter);
+envelope.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLetter();}});
+openBtn.addEventListener('click',openLetter);
+</script>
+</body>
+</html>
